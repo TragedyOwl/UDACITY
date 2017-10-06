@@ -1,0 +1,25 @@
+import pandas as pd
+from sklearn import linear_model
+import matplotlib.pyplot as plt
+
+# 使用 pandas 中的 read_csv 函数以 DataFrame 形式加载数据。
+dataframe = pd.read_csv('./data/challenge_dataset.txt')
+# print(dataframe)
+
+x_values = dataframe[['x']]
+y_values = dataframe[['y']]
+
+#train model on data
+body_reg = linear_model.LinearRegression()
+body_reg.fit(x_values, y_values)
+
+#visualize results
+plt.scatter(x_values, y_values)
+plt.plot(x_values, body_reg.predict(x_values))
+plt.show()
+
+
+
+
+
+
