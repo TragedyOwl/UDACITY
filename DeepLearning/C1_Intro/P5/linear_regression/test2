@@ -8,10 +8,13 @@ dataframe = pd.read_csv('./data/challenge_dataset.txt')
 
 x_values = dataframe[['x']]
 y_values = dataframe[['y']]
+print(x_values.head())
+print(y_values.head())
 
 #train model on data
 body_reg = linear_model.LinearRegression()
 body_reg.fit(x_values, y_values)
+
 
 #visualize results
 plt.scatter(x_values, y_values)
